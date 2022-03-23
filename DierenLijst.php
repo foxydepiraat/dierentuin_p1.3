@@ -25,7 +25,7 @@
     <form method="POST">
         <!--knop naar home pagina -->
         <a href="home.php">home</a><br/>
-        <!-- overzicht van de dierenlijst -->
+        <!-- overzicht van de dierenlijst voor het zoeken -->
         dier naam:<input type="text" name="txtnaam"/>
         dier soort:<input type="text" name="txtsoort"/>
         gedrag: <select name="gedrag">
@@ -46,6 +46,7 @@
         veblijf nummer:<input type="text" Name="txtVerblijfNum"/><br/>
         <input type="submit" name="btnZoek" value="ZOEK"/>
     </form>
+    <!-- de overzicht van alle dieren -->
     <table>
         <tr>
             <th>dier id</th>
@@ -65,6 +66,7 @@
                     echo "<td>$item->soort</td>";
                     echo "<td>$item->gedrag</td>";
                     //echo "<td>$item->gebied</td>";
+                    //echo "<td>$item->verblijfNum</td>";
                     echo "</tr>";
             }
             //if(isset(['btnZoek'])){
