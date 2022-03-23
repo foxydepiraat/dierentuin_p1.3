@@ -1,0 +1,14 @@
+body{
+    
+    background-image: url('kaartBlijdorp.jpg');
+    background-repeat: no-repeat;
+    background-size: 37%, 37%;
+    
+}
+#kaart{
+    margin-left: 30%;
+}
+#topbar {
+    margin: 0;
+    background-color: rgb( 232, 255, 198,);
+}
