@@ -62,8 +62,8 @@ require ("dierDB.php");
 
             $query1="INSERT INTO verblijf ( verblijf_num, gebied) values($verblijf_num,'$gebied' )";
             $stm=$conn->prepare($query1);
-            $stm->execute();
-
+            if($stm->execute());
+                echo "gelukt";
         }
     ?>
 </body>

@@ -46,6 +46,8 @@
         veblijf nummer:<input type="text" Name="txtVerblijfNum"/><br/>
         <input type="submit" name="btnZoek" value="ZOEK"/>
     </form>
+    </div>
+    <div id="tabel">
     <!-- de overzicht van alle dieren -->
     <table>
         <tr>
@@ -75,7 +77,7 @@
                 $stm=$conn->prepare($query1);
                 $stm->execute();
                 
-
+                
 
             }       
             

@@ -56,3 +56,21 @@ h4{
     margin-right: 20%;
     border-radius: 10px;
 }
+td{
+    text-align: center;
+}
+#tabel{
+    margin-top: 2%;
+    margin-left: 50%;
+    border-radius: 10px;
+    background-color: rgba(232, 255, 198, 0.8);
+    margin-right: 10%;
+
+}
+#result{
+    margin-top: 2%;
+    margin-left: 10%;
+    border-radius: 10px;
+    background-color: rgba(232, 255, 198, 0.8);
+    margin-right: 55%;
+}
