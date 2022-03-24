@@ -69,13 +69,15 @@
                     //echo "<td>$item->verblijfNum</td>";
                     echo "</tr>";
             }
-            //if(isset(['btnZoek'])){
-                //echo "gelukt";
+            if(isset($_POST['btnZoek'])){
+                echo "gelukt";
+                $query1="SELECT * FROM dier WHERE naam LIKE '%%'";
+                $stm=$conn->prepare($query1);
+                $stm->execute();
+                
 
 
-
-
-            //}       
+            }       
             
         ?>
         </div>
