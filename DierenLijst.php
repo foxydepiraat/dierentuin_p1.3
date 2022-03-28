@@ -71,14 +71,25 @@
                     //echo "<td>$item->verblijfNum</td>";
                     echo "</tr>";
             }
+        
             if(isset($_POST['btnZoek'])){
                 echo "gelukt";
                 $query1="SELECT * FROM dier WHERE naam LIKE '%%'";
                 $stm=$conn->prepare($query1);
                 $stm->execute();
                 
+                foreach($dier as $item){
+                        echo "<tr>";
+                        echo "<Td>$item->dier_id</td>";
+                        echo "<Td>$item->naam</td>";
+                        echo "<td>$item->soort</td>";
+                        echo "<td>$item->gedrag</td>";
+                        //echo "<td>$item->gebied</td>";
+                        //echo "<td>$item->verblijfNum</td>";
+                        echo "</tr>";
                 
-
+                
+                }
             }       
             
         ?>
