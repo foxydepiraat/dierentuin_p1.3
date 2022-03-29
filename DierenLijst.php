@@ -71,13 +71,35 @@
                     //echo "<td>$item->verblijfNum</td>";
                     echo "</tr>";
             }
-        
+            ?>
+            </table>
+            </div>
+
+            <div id="result">
+                <table>
+            <tr>
+                <th>dier id</th>
+                <th>dier naam</th>
+                <th>dier soort</th>
+                <th>gedrag</th>
+                <th>gebied</th>
+                <th>Verblijf nummer</th>
+            </tr>
+            <?php
+
             if(isset($_POST['btnZoek'])){
-                echo "gelukt";
-                $query1="SELECT * FROM dier WHERE naam LIKE '%%'";
+                
+                
+                $txtnaam=$_POST['txtnaam'];
+                $txtsoort=$_POST['txtsoort'];
+                $gedrag=$_POST['gedrag'];
+                
+                $query1="SELECT * FROM dier WHERE naam LIKE '%$txtnaam%' OR WHERE soort LIKE '%$txtsoort%' OR WHERE gedrag like '%$gedrag%' ";
                 $stm=$conn->prepare($query1);
                 $stm->execute();
                 
+                $dier=$stm->fetchAll(PDO::FETCH_OBJ);
+
                 foreach($dier as $item){
                         echo "<tr>";
                         echo "<Td>$item->dier_id</td>";
@@ -87,7 +109,6 @@
                         //echo "<td>$item->gebied</td>";
                         //echo "<td>$item->verblijfNum</td>";
                         echo "</tr>";
-                
                 
                 }
             }       

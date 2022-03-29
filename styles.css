@@ -67,13 +67,7 @@ td{
     margin-right: 10%;
 
 }
-#result{
-    margin-top: 2%;
-    margin-left: 10%;
-    border-radius: 10px;
-    background-color: rgba(232, 255, 198, 0.8);
-    margin-right: 55%;
-}
+
 #Europe{
     margin-top: 18%;
     margin-left: 87%;
@@ -85,4 +79,12 @@ td{
 #Azië{
     margin-top: 15.5%;
     margin-left: 13%;
+}
+#result{
+    background-color: rgba(232, 255, 198, 0.8);
+    margin-top: -12%;
+    margin-left: 10%;
+    margin-right: 60%;
+    border-radius: 10px;
+    
 }
