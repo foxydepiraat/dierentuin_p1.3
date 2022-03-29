@@ -20,7 +20,6 @@ require ("dierDB.php");
         diername: <input type="text"   name="txtName" required/><br/>
         
         gedrag:   <select  name="gedrag">
-                    <option value="">             </option>
                     <option value="kalm">     kalm</option>
                     <option value="agressief">agressief</option>
                   </select><br/>
