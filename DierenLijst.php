@@ -26,10 +26,9 @@
         <!--knop naar home pagina -->
         <a href="home.php">home</a><br/>
         <!-- overzicht van de dierenlijst voor het zoeken -->
-        dier naam:<input type="text" name="txtnaam"/>
-        dier soort:<input type="text" name="txtsoort"/>
+        dier naam:<input type="text" name="txtnaam" require/>
+        dier soort:<input type="text" name="txtsoort" require/>
         gedrag: <select name="gedrag">
-                    <option value="">                   </option>
                     <option value="kalm">kalm           </option>
                     <option value="agressief">agressief </option>
                 </select></br>
@@ -94,11 +93,12 @@
                 $txtsoort=$_POST['txtsoort'];
                 $gedrag=$_POST['gedrag'];
                 
-                $query1="SELECT * FROM dier WHERE naam LIKE '%$txtnaam%' OR WHERE soort LIKE '%$txtsoort%' OR WHERE gedrag like '%$gedrag%' ";
+                $query1="SELECT * FROM dier WHERE naam LIKE '%$txtnaam%' AND soort LIKE '%$txtsoort%' AND gedrag = '$gedrag' ";
                 $stm=$conn->prepare($query1);
                 $stm->execute();
                 
                 $dier=$stm->fetchAll(PDO::FETCH_OBJ);
+                
 
                 foreach($dier as $item){
                         echo "<tr>";
