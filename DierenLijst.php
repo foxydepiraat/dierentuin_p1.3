@@ -26,8 +26,8 @@
         <!--knop naar home pagina -->
         <a href="home.php">home</a><br/>
         <!-- overzicht van de dierenlijst voor het zoeken -->
-        dier naam:<input type="text" name="txtnaam" require/>
-        dier soort:<input type="text" name="txtsoort" require/>
+        dier naam:<input type="text" name="txtnaam"/>
+        dier soort:<input type="text" name="txtsoort" />
         gedrag: <select name="gedrag">
                     <option value="kalm">kalm           </option>
                     <option value="agressief">agressief </option>

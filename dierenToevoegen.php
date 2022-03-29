@@ -16,8 +16,8 @@ require ("dierDB.php");
         <a href="home.php">Home</a><br/>
         
         <!-- formulier voor de dieren in de lijst te zetten -->
-        diersoort:<input type="text"   name="txtDier" required/><br/>
-        diername: <input type="text"   name="txtName" required/><br/>
+        diersoort:<input type="text"   name="txtDier" /><br/>
+        diername: <input type="text"   name="txtName" /><br/>
         
         gedrag:   <select  name="gedrag">
                     <option value="">             </option>
