@@ -13,11 +13,12 @@
 
 	<input type="submit" name="btnlogin" value="login" 
 	style="width: 175px; height: 20px; background-color: rgb(232, 255, 198);  border-color: green;" id="btnlogin"/>
-</div>	
+	<br/>
+	
+	
 </form>
 
 <?php
-	session_start();
 	if(isset($_POST['btnlogin']))
 	{
 	//controleren of gebruikersnaam en wachtwoord juist is
@@ -30,5 +31,5 @@
 		echo "Uw gebruikersnaam of wachtwoord is onjuist";
 	}
 }
-
 ?>
+</div>

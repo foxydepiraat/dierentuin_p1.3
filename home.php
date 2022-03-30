@@ -19,6 +19,9 @@
 
                  <input type="submit" name="btnErbij" value="DIEREN LIJST"
                 style="width: 200px; height: 30px; background-color: rgb(232, 255, 198);  border-color: green;"/>
+
+                <input type="submit" name="btnVerblijf" value="VERBLIJF TOEVOEGEN"
+                style="width: 200px; height: 30px; background-color: rgb(232, 255, 198);  border-color: green;"/>   
             </div>
 
             <div id="Europe">
@@ -37,7 +40,7 @@
             </div>
         </form>
     <?php
-    session_start();
+    
     if(isset($_POST['btnLogin']))  
     {  
         header('location:index.php');
@@ -53,6 +56,10 @@
     if(isset($_POST['btnErbij']))
     {
         header('location:dierenLijst.php');
+    }
+    if(isset($_POST['btnVerblijf']))
+    {
+        header('location:legeverblijf.php');
     }
     if(isset($_POST['btnEurope']))
     {

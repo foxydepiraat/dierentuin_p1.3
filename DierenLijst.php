@@ -9,7 +9,6 @@
     }else {
         echo "query mislukt";
     }
-    
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +42,8 @@
                     <option value="Zuid-Amerika"> Zuid-Amerika</option>
                 </select>
         veblijf nummer:<input type="text" Name="txtVerblijfNum"/><br/>
-        <input type="submit" name="btnZoek" value="ZOEK"/>
+        <input type="submit" name="btnZoek" value="ZOEK"
+        style="width: 150px; height: 25px; background-color: rgb(232, 255, 198);  border-color: green;"/>
     </form>
     </div>
     <div id="tabel">
