@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <?php
 require ("dierDB.php");
+$query = "SELECT * FROM verblijf ORDER BY verblijf_num asc;";
+    $stm=$conn->prepare($query);
+    if($stm->execute() == true)
+    {
+        $verblijf = $stm->fetchAll(PDO::FETCH_OBJ);
+
+    }else {
+        echo "query mislukt";
+    }
 ?>
 <head>
     <title>
@@ -65,4 +74,25 @@ require ("dierDB.php");
                 echo "gelukt";
         }
     ?>
+            <div id="verblijfOverzicht">
+        <table>
+            <tr>
+                <th>verblijf ID</th>
+                <th>verblijf nummer</th>
+                <th>gebied</th>
+            </tr>
+            <?php
+                 foreach($verblijf as $item){
+                    echo "<tr>";
+                    echo "<td>$item->verblijf_id</td>";
+                    echo "<td>$item->verblijf_num</td>";
+                    echo "<td>$item->gebied</td>";
+                    echo "</tr>";
+                 }
+            ?>
+
+
+
+        </table>
+        </div>
 </body>

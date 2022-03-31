@@ -9,6 +9,15 @@
     }else {
         echo "query mislukt";
     }
+    $query = "SELECT * FROM verblijf ORDER BY verblijf_num asc;";
+    $stm=$conn->prepare($query);
+    if($stm->execute() == true)
+    {
+        $verblijf = $stm->fetchAll(PDO::FETCH_OBJ);
+
+    }else {
+        echo "query mislukt";
+    }
 ?>
 
 <!DOCTYPE html>

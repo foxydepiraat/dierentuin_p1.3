@@ -40,7 +40,6 @@
             </div>
         </form>
     <?php
-    
     if(isset($_POST['btnLogin']))  
     {  
         header('location:index.php');

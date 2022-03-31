@@ -5,8 +5,8 @@
     $stm=$conn->prepare($query);
     if($stm->execute() == true)
     {
-        $dier = $stm->fetchAll(PDO::FETCH_OBJ);
-        
+        $verblijf = $stm->fetchAll(PDO::FETCH_OBJ);
+
     }else {
         echo "query mislukt";
     }
@@ -49,8 +49,33 @@
             if($stm->execute());
                 echo "gelukt";
         }
+
         ?>
+        </div>
+        <div id="verblijfOverzicht">
+        <table>
+            <tr>
+                <th>verblijf ID</th>
+                <th>verblijf nummer</th>
+                <th>gebied</th>
+            </tr>
+            <?php
+                 foreach($verblijf as $item){
+                    echo "<tr>";
+                    echo "<td>$item->verblijf_id</td>";
+                    echo "<td>$item->verblijf_num</td>";
+                    echo "<td>$item->gebied</td>";
+                    echo "</tr>";
+                 }
+                 
+                 
+                 ?>
+
+
+
+        </table>
+        </div>
     </body>
-    </div>
+    
 
 </html>
