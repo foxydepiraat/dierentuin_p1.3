@@ -1,0 +1,30 @@
+
+body{
+    margin: 0;
+    background-image: url('BGdierenjpg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#homeDiv{
+    background-color: rgb(232, 255, 198);
+    margin-top: 0px;
+}
+#Europe{
+    margin-top: 18%;
+    margin-left: 87%;
+}
+#Australië{
+    margin-top: -11%;
+    margin-left: 76%;
+}
+#Azië{
+    margin-top: 15.5%;
+    margin-left: 13%;
+}
+#loginDiv{
+    background-color: rgba(232, 255, 198, 0.8);
+    margin-top: 25%; 
+    border-radius: 10px;
+    margin-left: 40%;
+    margin-right:40%;
+}

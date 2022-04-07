@@ -12,7 +12,6 @@
     }
     
 ?>
-?>
 <html>
     <head>
         <title>lege verblijven</title>
@@ -21,8 +20,15 @@
     <body>
         <div id="verblijf">
         <form method="POST">
-            <a href="home.php">HOME</a><br/>
-            verblijf nummer:<input type="text" name="txtverblijf_num" required/><br/>
+           <!--knop naar home pagina -->
+        <input type="submit" name="btnHome" value="HOME"
+        style="width: 150px; height: 25px; background-color: rgb(232, 255, 198);  border-color: green;"/>
+        <?php
+            if(isset($_POST['btnHome'])){
+                header('location:home.php');
+            }
+        ?></br>
+            verblijf nummer:<input type="text" name="txtverblijf_num"/><br/>
             gebied:<select  name="gebied">
                     <option value="">                   </option>
                     <option value="Afrika">       Afrika</option>

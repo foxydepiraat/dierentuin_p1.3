@@ -1,22 +1,18 @@
-body{
-    margin: 0;
-    background-image: url('BGdierenjpg.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
+#everything{
+    display: flex;
+
 }
+body{
+    background-color: rgb(3, 160, 3);
+}
+
 h2{
     color: white;
 }
 h4{
     color: white;
 }
-#loginDiv{
-    background-color: rgba(232, 255, 198, 0.8);
-    margin-top: 25%; 
-    border-radius: 10px;
-    margin-left: 40%;
-    margin-right:40%;
-}
+
 #lijstDiv{
     background-color: rgb(232, 255, 198);
     margin-top: 20%;
@@ -51,7 +47,7 @@ h4{
 }
 #overzicht{
     margin-left: 20%;
-    margin-top: 15%;
+    margin-top: 0%;
     background-color: rgba(232, 255, 198, 0.8);
     margin-right: 20%;
     border-radius: 10px;
@@ -60,34 +56,15 @@ td{
     text-align: center;
 }
 #tabel{
-    margin-top: 2%;
-    margin-left: 50%;
+    margin-top: 5%;
+    margin-left: 40%;
     border-radius: 10px;
     background-color: rgba(232, 255, 198, 0.8);
-    margin-right: 10%;
-
+    width: 350px;
+    position: relative;
 }
 
-#Europe{
-    margin-top: 18%;
-    margin-left: 87%;
-}
-#Australië{
-    margin-top: -11%;
-    margin-left: 76%;
-}
-#Azië{
-    margin-top: 15.5%;
-    margin-left: 13%;
-}
-#result{
-    background-color: rgba(232, 255, 198, 0.8);
-    margin-top: -19%;
-    margin-left: 10%;
-    margin-right: 60%;
-    border-radius: 10px;
 
-}
 #verblijf{
     background-color: rgba(232, 255, 198, 0.8);
     margin-top: 10%;

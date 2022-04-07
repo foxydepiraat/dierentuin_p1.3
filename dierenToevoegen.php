@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+
 require ("dierDB.php");
 $query = "SELECT * FROM verblijf ORDER BY verblijf_num asc;";
     $stm=$conn->prepare($query);
@@ -11,6 +12,7 @@ $query = "SELECT * FROM verblijf ORDER BY verblijf_num asc;";
         echo "query mislukt";
     }
 ?>
+
 <head>
     <title>
         dieren toevoegen
@@ -74,22 +76,7 @@ $query = "SELECT * FROM verblijf ORDER BY verblijf_num asc;";
                 echo "gelukt";
         }
     ?>
-            <div id="verblijfOverzicht">
-        <table>
-            <tr>
-                <th>verblijf ID</th>
-                <th>verblijf nummer</th>
-                <th>gebied</th>
-            </tr>
-            <?php
-                 foreach($verblijf as $item){
-                    echo "<tr>";
-                    echo "<td>$item->verblijf_id</td>";
-                    echo "<td>$item->verblijf_num</td>";
-                    echo "<td>$item->gebied</td>";
-                    echo "</tr>";
-                 }
-            ?>
+            
 
 
 
