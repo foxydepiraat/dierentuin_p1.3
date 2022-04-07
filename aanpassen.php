@@ -9,6 +9,8 @@
     if($stm->execute()){
         $item = $stm->fetch(PDO::FETCH_OBJ);
     }
+    $query = "SELECT * FROM verblijf";
+    $stm
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,9 +22,13 @@
 <body>
     <form method="POST">
         <input type="text" name="txtNaam" value="<?php echo "$item->naam";?>"/>
-        <!-- <select name="verblijf"/> -->
+        <select  name="verblijf">
+            <?php
+            foreach($verblijf as $kooi)
+                echo "<option value=''";
 
-        <!-- </select> --> 
+            ?>
+        </select>
         <input type="submit" name="btnSave" value="WIJZIG"
         style="width: 150px; height: 25px; background-color: rgb(232, 255, 198);  border-color: green;"/>
     </form>
