@@ -31,23 +31,19 @@
 		$stm->execute();
 
 		$result=$stm->fetchAll(PDO::FETCH_OBJ);
-		
+	
 	//controleren of gebruikersnaam en wachtwoord juist is
 	foreach($result as $item)
-		if($_POST['textgebruiker'] == "$item->naam" && $_POST['textPassword'] == "$item->wachtwoord"){
-			echo "dit account bestaat al";
+		if($_POST['textgebruiker'] == "$item->naam" && $_POST['textPassword'] != "$item->wachtwoord"){
+			$naam=$_POST['textgebruiker'];
+			$wachtwoord=$_POST['textPassword'];
 		
-
-			
-			}
-	}else {
-		$naam=$_POST['textgebruiker'];
-		$wachtwoord=$_POST['textPassword'];
-
-		$query= "INSERT INTO login (naam, wachtwoord)values ('$naam','$wachtwoord')";
-		$stm= $conn->prepare($query);
-		if($stm->execute()){
-			echo "gelukt";
+			$query= "INSERT INTO login (naam, wachtwoord)values ('$naam','$wachtwoord')";
+			$stm= $conn->prepare($query);
+			if($stm->execute()){
+				echo "gelukt";
+			}else echo "dit account bestaat al";
+		}
 	}
 	if(isset($_POST['btnlogin']))
 	{
@@ -56,15 +52,15 @@
 		$stm->execute();
 
 		$result=$stm->fetchAll(PDO::FETCH_OBJ);
-		
+	
 	//controleren of gebruikersnaam en wachtwoord juist is
 	foreach($result as $item)
 		if($_POST['textgebruiker'] == "$item->naam" && $_POST['textPassword'] == "$item->wachtwoord")
 		{
 		//knop naar home pagina
 			Header("location: home.php");
-		}
+		}else echo "verkeerde usernaam of wachtwoord ";
 	}
-	}
+	
 ?>
 </div>

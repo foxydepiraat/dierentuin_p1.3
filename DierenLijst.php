@@ -1,24 +1,11 @@
 
 <?php
     require ("dierDB.php");
-    $query = "SELECT * FROM dier ORDER BY naam asc;";
-    $stm=$conn->prepare($query);
-    if($stm->execute() == true)
-    {
-        $dier = $stm->fetchAll(PDO::FETCH_OBJ);
-        
-    }else {
-        echo "query mislukt";
-    }
-    $query = "SELECT * FROM verblijf ORDER BY verblijf_num asc;";
-    $stm=$conn->prepare($query);
-    if($stm->execute() == true)
-    {
-        $verblijf = $stm->fetchAll(PDO::FETCH_OBJ);
 
-    }else {
-        echo "query mislukt";
-    }
+    $query1= "SELECT * FROM dier NATURAL JOIN dierverblijf_id NATURAL JOIN verblijf ORDER BY naam asc";
+    $stm=$conn->prepare($query1);
+    $stm->execute();
+    $dier = $stm->fetchAll(PDO::FETCH_OBJ); 
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +64,7 @@
                 $txtsoort=$_POST['txtsoort'];
                 $gedrag=$_POST['gedrag'];
                 
-                $query1="SELECT * FROM dier WHERE naam LIKE '%$txtnaam%' AND soort LIKE '%$txtsoort%' AND gedrag = '$gedrag' ";
+                $query1="SELECT * FROM dier natural JOIN dierverblijf_id natural JOIN  verblijf WHERE naam LIKE '%$txtnaam%' AND soort LIKE '%$txtsoort%' AND gedrag = '$gedrag' ";
                 $stm=$conn->prepare($query1);
                 $stm->execute();
                 
@@ -93,17 +80,21 @@
     <!-- de overzicht van alle dieren -->
     <table>
         <tr>
-            <th>dier id</th>
+            <th>dier ID</th>
             <th>dier naam</th>
             <th>dier soort</th>
             <th>gedrag</th>
+            <th>verblijf ID</th>
+            <th>verblijf nummer</th>
+            <th>gebied</th>
             <th>Aanpassen</th>
         </tr>
         
         <?php
 
         if(isset($_POST['btnNaam'])){
-            $query = "SELECT * FROM dier ORDER BY naam asc;";
+            
+            $query = "SELECT * FROM dier natural JOIN dierverblijf_id natural JOIN  verblijf ORDER BY naam asc;";
             $stm=$conn->prepare($query);
             if($stm->execute() == true)
             {
@@ -114,9 +105,9 @@
             }
         }
         if(isset($_POST['btnSoort'])){
-            $query = "SELECT * FROM dier ORDER BY soort asc;";
+            $query = "SELECT * FROM dier natural JOIN dierverblijf_id natural JOIN  verblijf ORDER BY soort asc;";
             $stm=$conn->prepare($query);
-            if($stm->execute() == true)
+            if($stm->execute())
             {
                 $dier = $stm->fetchAll(PDO::FETCH_OBJ);
                 
@@ -130,6 +121,9 @@
                     echo "<Td>$item->naam</td>";
                     echo "<td>$item->soort</td>";
                     echo "<td>$item->gedrag</td>";
+                    echo "<td>$item->verblijf_id</td>";
+                    echo "<td>$item->verblijf_num</td>";
+                    echo "<td>$item->gebied</td>";
                     echo "<td><a href='aanpassen.php?ID=$item->dier_id'>wijzigen<a></td>";
                     echo "</tr>";
             }

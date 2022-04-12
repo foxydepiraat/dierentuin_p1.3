@@ -1,26 +1,40 @@
 
 body{
+    position: fixed;
     margin: 0;
     background-image: url('BGdierenjpg.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
+    background-color: rgba(159,209,174,255);
 }
+
 #homeDiv{
     background-color: rgb(232, 255, 198);
     margin-top: 0px;
+    width: 2000px;
 }
+
 #Europe{
+    max-width: 100%;
+    position:   fixed;
     margin-top: 18%;
     margin-left: 87%;
 }
+
 #Australië{
-    margin-top: -11%;
+    float: right;
+    max-width: 100%;
+    position: fixed;
+    margin-top: 10.3%;
     margin-left: 76%;
 }
+
 #Azië{
-    margin-top: 15.5%;
+    position: fixed;
+    margin-top: 29.5%;
     margin-left: 13%;
 }
+
 #loginDiv{
     background-color: rgba(232, 255, 198, 0.8);
     margin-top: 25%; 
@@ -28,3 +42,4 @@ body{
     margin-left: 40%;
     margin-right:40%;
 }
+

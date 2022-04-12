@@ -33,7 +33,8 @@
         style="width: 150px; height: 25px; background-color: rgb(232, 255, 198);  border-color: green;"/>
     </form>
     <?php
-        //$Naam=$_POST['txtNaam'];
+        $Naam=$_POST['txtNaam'];
+        
 
     ?>
 </body>
