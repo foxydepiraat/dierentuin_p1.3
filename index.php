@@ -59,7 +59,7 @@
 		{
 		//knop naar home pagina
 			Header("location: home.php");
-		}else echo "verkeerde usernaam of wachtwoord ";
+		}else echo "";
 	}
 	
 ?>

@@ -20,8 +20,7 @@
     <div id="overzicht">
     <form method="POST">
         <!--knop naar home pagina -->
-        <input type="submit" name="btnHome" value="HOME"
-        style="width: 150px; height: 25px; background-color: rgb(232, 255, 198);  border-color: green;"/>
+        <input type="submit" name="btnHome" value="HOME" class="homebtn"/>
         <?php
             if(isset($_POST['btnHome'])){
                 header('location:home.php');
@@ -35,7 +34,6 @@
                     <option value="agressief">agressief </option>
                 </select></br>
         gebied: <select  name="gebied">
-                    <option value="">                   </option>
                     <option value="Afrika">       Afrika</option>
                     <option value="Australië">    Australië</option>
                     <option value="Azië">         Azië</option>
@@ -47,8 +45,10 @@
         veblijf nummer:<input type="text" Name="txtVerblijfNum"/><br/>
         <input type="submit" name="btnZoek" value="ZOEK"
         style="width: 150px; height: 25px; background-color: rgb(232, 255, 198);  border-color: green;"/>
+        
         <input type="submit" name="btnNaam" value="sorteren op naam"
         style="width: 150px; height: 25px; background-color: rgb(232, 255, 198);  border-color: green;"/>
+
         <input type="submit" name="btnSoort" value="sorteren op soort"
         style="width: 150px; height: 25px; background-color: rgb(232, 255, 198);  border-color: green;"/>
     </form>
@@ -63,8 +63,11 @@
                 $txtnaam=$_POST['txtnaam'];
                 $txtsoort=$_POST['txtsoort'];
                 $gedrag=$_POST['gedrag'];
-                
-                $query1="SELECT * FROM dier natural JOIN dierverblijf_id natural JOIN  verblijf WHERE naam LIKE '%$txtnaam%' AND soort LIKE '%$txtsoort%' AND gedrag = '$gedrag' ";
+                $gebied=$_POST['gebied'];
+                $verblijf_num=$_POST['txtVerblijfNum'];
+               
+            
+                $query1="SELECT * FROM dier natural join verblijf natural join dierverblijf_id WHERE naam LIKE '%$txtnaam%'AND soort LIKE '%$txtsoort%' AND gedrag = '$gedrag' AND gebied = '$gebied' AND verblijf_num LIKE '%$verblijf_num%'   ";
                 $stm=$conn->prepare($query1);
                 $stm->execute();
                 
@@ -87,7 +90,6 @@
             <th>verblijf ID</th>
             <th>verblijf nummer</th>
             <th>gebied</th>
-            <th>Aanpassen</th>
         </tr>
         
         <?php
@@ -124,7 +126,6 @@
                     echo "<td>$item->verblijf_id</td>";
                     echo "<td>$item->verblijf_num</td>";
                     echo "<td>$item->gebied</td>";
-                    echo "<td><a href='aanpassen.php?ID=$item->dier_id'>wijzigen<a></td>";
                     echo "</tr>";
             }
             ?>
