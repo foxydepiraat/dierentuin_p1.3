@@ -86,7 +86,9 @@ require ("dierDB.php");
             
             $query="INSERT INTO dier (soort, naam, gedrag) values('$txtDier', '$txtName', '$gedrag')";
             $stm=$conn->prepare($query);
-			$stm->execute();
+			if($stm->execute())
+                echo "gelukt";
+                header('location:dierentoevoegen.php');
         }
         if(isset($_POST['btnKoppelen'])){
 
